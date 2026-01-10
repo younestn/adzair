@@ -1,0 +1,14 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/bootstrap/cache
+.env.backup
+.env.production.local
+.phpunit.result.cache
+Dockerfile
+docker-compose.yml
+.DS_Store
+vscode
+.vscode
+*.log
