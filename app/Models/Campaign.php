@@ -12,8 +12,13 @@ class Campaign extends Model
         'user_id',
         'name',
         'description',
+        'target_wilayas',
+        'target_audience',
         'budget',
         'spent',
+        'spent_amount',
+        'cpc_price',
+        'niche',
         'start_date',
         'end_date',
         'status',
@@ -25,6 +30,11 @@ class Campaign extends Model
         'start_date' => 'date',
         'end_date' => 'date',
         'approved_at' => 'datetime',
+        'target_wilayas' => 'array',
+        'target_audience' => 'array',
+        'budget' => 'decimal:2',
+        'spent_amount' => 'decimal:2',
+        'cpc_price' => 'decimal:4',
     ];
 
     public function user(): BelongsTo
@@ -60,13 +70,16 @@ class Campaign extends Model
     public function getCTR()
     {
         $impressions = $this->getImpressionCount();
-        if ($impressions === 0) return 0;
+        if ($impressions === 0) {
+            return 0;
+        }
+
         return ($this->getClickCount() / $impressions) * 100;
     }
 
     public function getRemainingBudget()
     {
-        return $this->budget - $this->spent;
+        return $this->budget - ($this->spent_amount ?? $this->spent);
     }
 
     public function isActive()

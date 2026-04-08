@@ -11,10 +11,23 @@ class Ad extends Model
     protected $fillable = [
         'campaign_id',
         'type',
+        'media_type',
         'content',
         'image_url',
+        'media_path',
+        'media_url',
+        'headline',
+        'description',
         'destination_url',
+        'tracking_slug',
+        'target_url',
+        'is_product_ad',
+        'sales_count',
         'status',
+    ];
+
+    protected $casts = [
+        'is_product_ad' => 'boolean',
     ];
 
     public function campaign(): BelongsTo
@@ -30,5 +43,10 @@ class Ad extends Model
     public function clicks(): HasMany
     {
         return $this->hasMany(Click::class);
+    }
+
+    public function assignments(): HasMany
+    {
+        return $this->hasMany(AdPageAssignment::class);
     }
 }
