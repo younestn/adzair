@@ -48,6 +48,16 @@ class User extends Authenticatable
         return $this->hasMany(Withdrawal::class);
     }
 
+    public function socialPages()
+    {
+        return $this->hasMany(SocialPage::class);
+    }
+
+    public function pricingRules()
+    {
+        return $this->hasMany(PricingRule::class);
+    }
+
     public function isAdmin()
     {
         return $this->role === 'admin';

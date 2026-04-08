@@ -11,8 +11,11 @@ class Click extends Model
         'campaign_id',
         'ad_id',
         'website_id',
+        'social_page_id',
         'user_agent',
         'ip_address',
+        'country',
+        'wilaya',
         'timestamp',
     ];
 
@@ -35,5 +38,10 @@ class Click extends Model
     public function website(): BelongsTo
     {
         return $this->belongsTo(Website::class);
+    }
+
+    public function socialPage(): BelongsTo
+    {
+        return $this->belongsTo(SocialPage::class);
     }
 }
