@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl bg-white p-5 shadow-soft ring-1 ring-slate-100;
+  }
+  .input {
+    @apply mt-1 w-full rounded-xl border-slate-200 bg-white px-4 py-2.5 text-sm text-slate-800 shadow-sm focus:border-brand-500 focus:ring-brand-500;
+  }
+  .btn-primary {
+    @apply rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-bold text-white transition hover:bg-brand-700;
+  }
+  .btn-secondary {
+    @apply rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-bold text-slate-700 transition hover:bg-slate-50;
+  }
+}
