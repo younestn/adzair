@@ -4,10 +4,11 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "php": "^8.1",
-        "laravel/framework": "^10.0",
-        "laravel/breeze": "^1.21",
+        "php": "^8.2",
+        "laravel/framework": "^11.0",
+        "laravel/breeze": "^2.0",
         "laravel/tinker": "^2.8"
+        
     },
     "require-dev": {
         "laravel/pint": "^1.0",
